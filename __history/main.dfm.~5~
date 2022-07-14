@@ -1,0 +1,62 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Novastar - '#1091#1087#1088#1072#1074#1083#1077#1085#1080#1077' '#1087#1086#1076#1089#1090#1074#1077#1090#1082#1086#1081
+  ClientHeight = 342
+  ClientWidth = 322
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Button1: TButton
+    Left = 170
+    Top = 13
+    Width = 81
+    Height = 33
+    Caption = 'Open port'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object ComPortList: TComboBox
+    Left = 19
+    Top = 19
+    Width = 145
+    Height = 21
+    TabOrder = 1
+    Text = 'Select port'
+  end
+  object Button2: TButton
+    Left = 104
+    Top = 128
+    Width = 105
+    Height = 33
+    Caption = 'Button2'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object ComPort1: TComPort
+    BaudRate = br115200
+    Port = 'COM1'
+    Parity.Bits = prNone
+    StopBits = sbOneStopBit
+    DataBits = dbEight
+    Events = [evRxChar, evTxEmpty, evRxFlag, evRing, evBreak, evCTS, evDSR, evError, evRLSD, evRx80Full]
+    FlowControl.OutCTSFlow = False
+    FlowControl.OutDSRFlow = False
+    FlowControl.ControlDTR = dtrDisable
+    FlowControl.ControlRTS = rtsDisable
+    FlowControl.XonXoffOut = False
+    FlowControl.XonXoffIn = False
+    StoredProps = [spBasic]
+    TriggersOnRxChar = True
+    Left = 264
+    Top = 16
+  end
+end
